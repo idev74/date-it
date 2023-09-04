@@ -47,6 +47,32 @@ class DateIt {
         return this._date.getSeconds();
     }
 
+    when() {
+        const now = new Date();
+        const diff = Math.floor(this._date - now);
+        const absoluteDiff = Math.abs(diff);
+        
+        const times = [
+            { unit: 'year', ms: 31536000000 },
+            { unit: 'month', ms: 2592000000 },
+            { unit: 'day', ms: 86400000 },
+            { unit: 'hour', ms: 3600000 },
+            { unit: 'minute', ms: 60000 },
+            { unit: 'second', ms: 1000 },
+        ];
+
+        diff === 0 ? 'today' : false;
+
+        for (const time of times) {
+            if (absoluteDiff > time.ms) {
+                const count = Math.floor(absoluteDiff / time.ms);
+                return `${count} ${time.unit}${count > 1 ? 's' : ''} ${diff < 0 ? 'ago' : 'from now'}`;
+            } else if (diff === 0) {
+                return 'today';
+            }
+        }
+    }
+
     format(mask = 'Y M D') {
         const formatDate = mask.split('').map((item) => {
             switch (item) {
