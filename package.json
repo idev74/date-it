@@ -1,0 +1,19 @@
+{
+  "name": "date-it",
+  "version": "1.0.0",
+  "description": "A simple date library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "date",
+    "date library",
+    "date manipulation"
+  ],
+  "author": "Isabella Devassy",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
