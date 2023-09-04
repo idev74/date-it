@@ -3,6 +3,7 @@ A simple date library that makes getting date properties easier!
 
 ## Example Output
 ```
+const date = new DateIt()
 console.log( date.date )  // 4   - Date
 console.log( date.year )  // 2023 - Full year
 console.log( date.yr )    // 23   - Short year
