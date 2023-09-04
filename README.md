@@ -21,4 +21,16 @@ console.log(formatted.format('y/m/d'))       // 23/Jan/1
 console.log(formatted.format('H:I:S'))       // 02:03:04
 console.log(formatted.format('h:i:s'))       // 2:3:4
 console.log(formatted.format('Y-M-D h:I:S')) // 2023-January-01 2:03:04
+
+// on September 4, 2023
+const d = new DateIt(2023, 2, 2, 3, 4, 5)
+console.log(d.when()) // 6 months ago
+const e = new DateIt(2023, 12, 2, 3, 4, 5)
+console.log(e.when()) // 3 months from now
+const f = new DateIt(2028, 9, 2, 3, 4, 5)
+console.log(f.when()) // 5 years from now
+const g = new DateIt(2023, 8, 8, 7, 8, 9)
+console.log(g.when()) // 3 days from now
+const h = new DateIt()
+console.log(h.when()) // today
 ```
