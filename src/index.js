@@ -4,8 +4,8 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 
 class DateIt {
     constructor(...args) {
-		this._date = new Date(...args)
-	}
+        this._date = new Date(...args)
+    }
 
     get date() {
         return this._date.getDate();
@@ -46,17 +46,38 @@ class DateIt {
     get secs() {
         return this._date.getSeconds();
     }
+
+    format(mask = 'Y M D') {
+        const formatDate = mask.split('').map((item) => {
+            switch (item) {
+                case 'Y':
+                    return this.year;
+                case 'y':
+                    return this.yr;
+                case 'M':
+                    return this.month;
+                case 'm':
+                    return this.mon;
+                case 'D':
+                    return this.date.toString().padStart(2, '0');
+                case 'd':
+                    return this.date;
+                case 'H':
+                    return this.hours.toString().padStart(2, '0');
+                case 'h':
+                    return this.hours;
+                case 'I':
+                    return this.mins.toString().padStart(2, '0');
+                case 'i':
+                    return this.mins;
+                case 'S':
+                    return this.secs.toString().padStart(2, '0');
+                case 's':
+                    return this.secs;
+                default:
+                    return item;
+            }
+        }).join('');
+        return formatDate;
+    }
 }
-
-const date = new DateIt();
-
-console.log( date.date )  // 4   - Date
-console.log( date.year )  // 2023 - Full year
-console.log( date.yr )    // 23   - Short year
-console.log( date.month ) // July - Full month
-console.log( date.mon )   // Jul  - Short month
-console.log( date.day )   // Tuesday - Full day
-console.log( date.dy )    // Tue  - Short day
-console.log( date.hours ) // 18   - Hour
-console.log( date.mins )  // 6    - Minutes
-console.log( date.secs )  // 5    - Seconds
