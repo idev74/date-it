@@ -1,5 +1,13 @@
-# date-it
+# date-it Library
+[![npm version](https://img.shields.io/npm/v/date-it.svg)](https://www.npmjs.com/package/date-it)
+[![npm downloads](https://img.shields.io/npm/dt/date-it.svg)](https://www.npmjs.com/package/date-it)
+
+[Live Here!](https://www.npmjs.com/package/date-it)
+
 A simple date library that makes getting date properties easier!
+
+## Documentation
+Read docs [here](https://idev74.github.io/date-lib-docs/)!
 
 ## Example Output
 ```javascript
