@@ -129,39 +129,38 @@ class DateIt {
      * @returns {string} The formatted date, or 'Invalid Date' if the date is not a valid Date.
      */
   format(mask = 'Y M D') {
-    if (this._date instanceof Date) {
-      const formatDate = mask.split('').map((item) => {
-        switch (item) {
-          case 'Y':
-            return this.year;
-          case 'y':
-            return this.yr;
-          case 'M':
-            return this.month;
-          case 'm':
-            return this.mon;
-          case 'D':
-            return this.date.toString().padStart(2, '0');
-          case 'd':
-            return this.date;
-          case 'H':
-            return this.hours.toString().padStart(2, '0');
-          case 'h':
-            return this.hours;
-          case 'I':
-            return this.mins.toString().padStart(2, '0');
-          case 'i':
-            return this.mins;
-          case 'S':
-            return this.secs.toString().padStart(2, '0');
-          case 's':
-            return this.secs;
-          default:
-            return item;
-        }
-      }).join('');
-      return formatDate;
-    }
-    return 'Invalid Date';
+    const formatDate = mask.split('').map((item) => {
+      switch (item) {
+        case 'Y':
+          return this.year;
+        case 'y':
+          return this.yr;
+        case 'M':
+          return this.month;
+        case 'm':
+          return this.mon;
+        case 'D':
+          return this.date.toString().padStart(2, '0');
+        case 'd':
+          return this.date;
+        case 'H':
+          return this.hours.toString().padStart(2, '0');
+        case 'h':
+          return this.hours;
+        case 'I':
+          return this.mins.toString().padStart(2, '0');
+        case 'i':
+          return this.mins;
+        case 'S':
+          return this.secs.toString().padStart(2, '0');
+        case 's':
+          return this.secs;
+        default:
+          return item;
+      }
+    }).join('');
+    return formatDate;
   }
 }
+
+module.exports = DateIt;
